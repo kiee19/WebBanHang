@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+       
+<tiles-definitions>  
+ 
+   <!-- Base Admin -->
+    <definition name="admin"  
+        template="/WEB-INF/views/admin/layout/index.jsp">  
+        <put-attribute name="header" value="/WEB-INF/views/admin/common/header.jsp" />  
+        <put-attribute name="menu" value="/WEB-INF/views/admin/common/menu.jsp" />  
+        <put-attribute name="footer" value="/WEB-INF/views/admin/common/footer.jsp" />
+   </definition>  
+   
+   <!-- Views Of Admin -->
+    <definition name="viewsofadmin/*" extends="admin">  
+        <put-attribute name="body" value="/WEB-INF/views/admin/viewsofadmin/{1}.jsp" />  
+   </definition>  
+   
+      <!-- Base Web -->
+    <definition name="web"  
+        template="/WEB-INF/views/web/layout/index.jsp">  
+        <put-attribute name="header" value="/WEB-INF/views/web/common/header.jsp" />  
+        <put-attribute name="menu" value="/WEB-INF/views/web/common/menu.jsp" />  
+        <put-attribute name="footer" value="/WEB-INF/views/web/common/footer.jsp" />  
+    </definition>  
+    
+     <!-- Views Of Web -->
+    <definition name="viewsofweb/*" extends="web">  
+        <put-attribute name="body" value="/WEB-INF/views/web/viewsofweb/{1}.jsp" />  
+   </definition>
+   
+   <!-- Base Login -->
+    <definition name="login/*"  
+        template="/WEB-INF/views/login/{1}.jsp">  
+   </definition>
+   
+    <definition name="test/upload"  
+        template="/WEB-INF/views/test/upload.jsp">  
+   </definition>
+   
+ 
+ 
+</tiles-definitions> 
